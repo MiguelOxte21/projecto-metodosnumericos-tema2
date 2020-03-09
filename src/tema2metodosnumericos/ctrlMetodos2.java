@@ -12,24 +12,36 @@ import java.util.ArrayList;
  * @author cbo_m
  */
 public class ctrlMetodos2 {
-    public tblPunto Punto(double li){
+    public tblPunto Punto(double li,double errordeseado,int iteraciones){
         ArrayList<csPunto> lista =  null;
         tblPunto tabla = null;
         double gx;
+        double error=1;
         int iteracion = 0;
         gx=getfx(li);
-        /*double error=100;
-        while (error>=0){
-            error = gx;
+        while (error>errordeseado){
+            csPunto fila=new csPunto();
+            fila.setIteracion(iteracion+1);
+            fila.setXi(li);
+            fila.setGx(this.getfx(fila.getXi()));
+            fila.setError(this.errorRelativo(fila.getGx(), fila.getXi()));
+            li = fila.getXi();
+            error = this.errorRelativo(fila.getGx(), fila.getXi());
+            /*fila.setError(this.erorrRelativo(fila.getGx(), fila.getXi()));
+            error = this.erorrRelativo(fila.getGx(), fila.getXi());
+            li=fila.getXi();
+            tabla=new tblPunto(lista);
+            lista.add(fila);
+            //fila.toString();
+            //return tabla;*/
         }
-         */      
-        
-        return null;
+        tabla = new tblPunto(lista);
+        return tabla;
     }
     private double getfx(double x){        
         return Math.exp(-x);
     }
-    private double erorrRelativo(double xfinal, double xprincipio){
+    private double errorRelativo(double xfinal, double xprincipio){
         return Math.abs((xfinal-xprincipio)/xfinal);
     }
 }
