@@ -19,21 +19,18 @@ public class ctrlMetodos2 {
         double error=1;
         int iteracion = 0;
         gx=getfx(li);
-        while (error>errordeseado){
+        lista=new ArrayList<csPunto>();
+        while (error>errordeseado && iteracion < iteraciones){
             csPunto fila=new csPunto();
             fila.setIteracion(iteracion+1);
             fila.setXi(li);
             fila.setGx(this.getfx(fila.getXi()));
-            fila.setError(this.errorRelativo(fila.getGx(), fila.getXi()));
-            li = fila.getXi();
-            error = this.errorRelativo(fila.getGx(), fila.getXi());
-            /*fila.setError(this.erorrRelativo(fila.getGx(), fila.getXi()));
-            error = this.erorrRelativo(fila.getGx(), fila.getXi());
-            li=fila.getXi();
-            tabla=new tblPunto(lista);
+            error=this.errorRelativo(fila.getGx(), fila.getXi());
+            li=fila.getGx();
+            fila.setError(error);
+            fila.toString();
             lista.add(fila);
-            //fila.toString();
-            //return tabla;*/
+            iteracion++;
         }
         tabla = new tblPunto(lista);
         return tabla;

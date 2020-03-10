@@ -37,7 +37,7 @@ public class dlgPunto extends javax.swing.JDialog {
         jLabel2 = new javax.swing.JLabel();
         txtError = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
-        txtxIteraciones = new javax.swing.JTextField();
+        txtIteraciones = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -79,9 +79,9 @@ public class dlgPunto extends javax.swing.JDialog {
 
         jLabel3.setText("Iteraciones");
 
-        txtxIteraciones.addActionListener(new java.awt.event.ActionListener() {
+        txtIteraciones.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtxIteracionesActionPerformed(evt);
+                txtIteracionesActionPerformed(evt);
             }
         });
 
@@ -105,7 +105,7 @@ public class dlgPunto extends javax.swing.JDialog {
                         .addGap(18, 18, 18)
                         .addComponent(jLabel3)
                         .addGap(18, 18, 18)
-                        .addComponent(txtxIteraciones, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(txtIteraciones, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 375, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -121,7 +121,7 @@ public class dlgPunto extends javax.swing.JDialog {
                     .addComponent(jLabel2)
                     .addComponent(txtError, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel3)
-                    .addComponent(txtxIteraciones, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtIteraciones, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(btnCalcular)
                 .addGap(18, 18, 18)
@@ -139,8 +139,8 @@ public class dlgPunto extends javax.swing.JDialog {
     private void btnCalcularActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCalcularActionPerformed
         // TODO add your handling code here:
         double xi = Double.parseDouble(this.txtXi.getText().trim());
-        double error = Double.parseDouble(this.txtXi.getText().trim());
-        int iteraciones = Integer.parseInt(this.txtXi.getText().trim());
+        double error = Double.parseDouble(this.txtError.getText().trim());
+        int iteraciones = Integer.parseInt(this.txtIteraciones.getText().trim());
         
         ctrlMetodos2 obj = new ctrlMetodos2();
         tblPunto listaResultados = obj.Punto(xi, error, iteraciones);
@@ -151,9 +151,9 @@ public class dlgPunto extends javax.swing.JDialog {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtErrorActionPerformed
 
-    private void txtxIteracionesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtxIteracionesActionPerformed
+    private void txtIteracionesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtIteracionesActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtxIteracionesActionPerformed
+    }//GEN-LAST:event_txtIteracionesActionPerformed
 
     /**
      * @param args the command line arguments
@@ -205,7 +205,7 @@ public class dlgPunto extends javax.swing.JDialog {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;
     private javax.swing.JTextField txtError;
+    private javax.swing.JTextField txtIteraciones;
     private javax.swing.JTextField txtXi;
-    private javax.swing.JTextField txtxIteraciones;
     // End of variables declaration//GEN-END:variables
 }
